@@ -32,5 +32,5 @@ jobs:
           python-version: 3.8
       - name: Launch test_calculator.py
         run: |
-          pytest test_calculator.py
+          pytest 
           
