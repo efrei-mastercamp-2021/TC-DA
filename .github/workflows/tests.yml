@@ -19,16 +19,13 @@ jobs:
   tests:
     runs-on: ubuntu-latest
     steps:
-      - name: Prepare project for development
-        run: |
-          python -m venv .venv
-          .venv/bin/pip install --upgrade pip
-          .venv/bin/pip install pytest
-          .venv/bin/pytest
       - name: Checkout project
         uses: actions/checkout@v2
-      - name: Set up Python 3.8
-        uses: actions/setup-python@v2
-        with:
-          python-version: 3.8
+      - name: Launch test
+        run: |
+          pip install virtualenv
+          virtualenv venv
+          source venv/bin/activate
+          pip install pytest
+          pytest
           
