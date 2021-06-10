@@ -32,5 +32,6 @@ jobs:
           python-version: 3.8
       - name: Launch test_calculator.py
         run: |
-          python -m pytest
+          python -m venv .venv
+          .venv/bin/pytest
           
